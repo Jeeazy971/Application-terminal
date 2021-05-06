@@ -113,7 +113,7 @@ namespace CoursSQLite
         }
         
         // Supprime des données dans la bdd
-        public static void DeleteData(string nom)
+        /* public static void DeleteData(string nom)
         {
             SQLiteConnection con = new SQLiteConnection("Data Source=F:\\testSQlite\\bdd.sqlite;Version=3;");
             con.Open();
@@ -123,7 +123,7 @@ namespace CoursSQLite
 
             con.Close();
 
-        }
+        } */
 
         // Lire les données dans la BDD
         public static void ReadData()
