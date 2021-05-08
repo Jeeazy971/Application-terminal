@@ -8,18 +8,15 @@ namespace CoursSQLite
     class Program
     {
         public static void Introduction()
-        {
-            string dess = "-----------------------------------------------------------";
-            string dess1 = "-------- AJOUT DE DONNEES DANS LA BDD SQLITE (TEST) -------";
-            string dess2 = "-----------------------------------------------------------";
-            Console.WriteLine(dess);
-            Console.WriteLine(dess1);
-            Console.WriteLine(dess2);
-            Console.WriteLine();
+        {  
+            Console.WriteLine("-----------------------------------------------------------");
+            Console.WriteLine("-------- AJOUT DE DONNEES DANS LA BDD SQLITE (TEST) -------");
+            Console.WriteLine("-----------------------------------------------------------");
+            Space();
         }
         public static string CheminBDD()
         {
-            string sqlpath = "F:\\testSQlite\\bdd.sqlite";
+            string sqlpath = "D:\\testBDD\\bdd.sqlite";
             return sqlpath;
         }
         public static string AjoutNom()
@@ -90,7 +87,7 @@ namespace CoursSQLite
         public static void CreateBDD()
         {
             SQLiteConnection.CreateFile(CheminBDD());
-            SQLiteConnection con = new SQLiteConnection("Data Source=F:\\testSQlite\\bdd.sqlite;Version=3;");
+            SQLiteConnection con = new SQLiteConnection("Data Source=D:\\testBDD\\bdd.sqlite;Version=3;");
             con.Open();
             string sqlReq = "create table clients (nom varchar(20), prenom varchar(20), age INTEGER(100))";
             SQLiteCommand command = new SQLiteCommand(sqlReq, con);
@@ -102,7 +99,7 @@ namespace CoursSQLite
         // Ajout de données dans la bdd
         public static void addData(string nom, string prenom, int age)
         {
-            SQLiteConnection con = new SQLiteConnection("Data Source=F:\\testSQlite\\bdd.sqlite;Version=3;");
+            SQLiteConnection con = new SQLiteConnection("Data Source=D:\\testBDD\\bdd.sqlite;Version=3;");
             con.Open();
             string sqlAdd = $"INSERT INTO clients(nom, prenom, age) VALUES('{nom}', '{prenom}', {age})";
             SQLiteCommand command = new SQLiteCommand(sqlAdd, con);
@@ -128,7 +125,7 @@ namespace CoursSQLite
         // Lire les données dans la BDD
         public static void ReadData()
         {
-            SQLiteConnection con = new SQLiteConnection("Data Source=F:\\testSQlite\\bdd.sqlite;Version=3;");
+            SQLiteConnection con = new SQLiteConnection("Data Source=D:\\testBDD\\bdd.sqlite;Version=3;");
             con.Open();
             string sqlRead = "SELECT * FROM clients";
             SQLiteCommand command = new SQLiteCommand(sqlRead, con);
@@ -173,15 +170,17 @@ namespace CoursSQLite
 
             while (true)
             {
-                Console.Write("com> ");
+                Console.Write("Terminal> ");
                 string com = Console.ReadLine();
                 Space();
 
                 if (com.ToLower() == "aide")
                 {
-                    Console.WriteLine("Liste des commandes du programme");
-                    Console.WriteLine("--------------------------------");
 
+                    Console.WriteLine("-----------------------------------------------------------");
+                    Console.WriteLine("----------- Liste des commandes du programme --------------");
+                    Console.WriteLine("-----------------------------------------------------------");
+                    Space();
                     foreach (KeyValuePair<string, string>dic in choix)
                     {
                         Console.WriteLine($"{dic.Key} : {dic.Value}");
@@ -193,6 +192,7 @@ namespace CoursSQLite
                 {
                     // Demande a l'utilisateur d'ajouter un nom et un prenom
                     addData(AjoutNom(), AjoutPrenom(), AjoutAge());
+                    Space();
                     Console.WriteLine("Les infos on bien été ajoutées");
                     Space();
                     continue;
@@ -208,6 +208,10 @@ namespace CoursSQLite
                 
                 if (com.ToLower() == "afficher")
                 {
+                    Console.WriteLine("-----------------------------------------------------------");
+                    Console.WriteLine("--------------- Liste de données dans la BDD --------------");
+                    Console.WriteLine("-----------------------------------------------------------");
+                    Space();
                     ReadData();
                     Space();
                     continue;
@@ -215,6 +219,7 @@ namespace CoursSQLite
                 
                 if (com.ToLower() == "quitter")
                 {
+                    Console.WriteLine("A bientôt ! :-)");
                     Environment.Exit(0);
                 }
             }

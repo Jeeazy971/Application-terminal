@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1sUK7I3Ta5BSPa8ecUyHrDvgBz4JsBN3dLlbxiJbWq996U+8F2JT07kEeijTMjZsh5eZ2Lv0JVzJRYfUYJIKQw==",
+  "dgSpecHash": "MDo84lcgcYMFccEBCuVfgesbQVg38ByX1PFF7IV841osMFbq3FZ5uVrDDGoavcXqhO+AQ7oVIoJEg3FtCuifiA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Josue\\Documents\\COURS_UDEMY\\C#\\CoursSQLite\\CoursSQLite.csproj",
+  "projectFilePath": "C:\\Users\\Josue\\Desktop\\Application-terminal-main\\CoursSQLite.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Josue\\.nuget\\packages\\entityframework\\6.3.0\\entityframework.6.3.0.nupkg.sha512",
     "C:\\Users\\Josue\\.nuget\\packages\\microsoft.csharp\\4.6.0\\microsoft.csharp.4.6.0.nupkg.sha512",
