@@ -1,5 +1,5 @@
 # Application-terminal
-Application terminal qui permet d'ajouter des données dans la BDD à la demande de l'utilisateur
+Application terminal qui permet d'ajouter des données dans la BDD à la demande de l'utilisateur. (En test)
 ## A lire
 Pour que l'application fonctionne il faudra créer un dossier. Et dans le dossier il faudra créer un fichier.sqlite pour que le code fonctionne correctement.
 
